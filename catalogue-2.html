@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کاتالوگ آموزشی FitLife | مریم محمدی ثانی</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap');
+
+  :root {
+    --green: #2E7D32;
+    --green-mid: #43A047;
+    --green-light: #81C784;
+    --green-pale: #E8F5E9;
+    --blue: #1565C0;
+    --blue-mid: #1976D2;
+    --blue-light: #64B5F6;
+    --gold: #F9A825;
+    --cream: #FAFAF7;
+    --ink: #1A1A2E;
+    --muted: #5C6370;
+    --white: #FFFFFF;
+    --border: #C8E6C9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    direction: rtl;
+    text-align: right;
+  }
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:linear-gradient(135deg,#81dd84,#89bde7);
+  color:white;
+}
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:bold;
+}
+.menu-btn{
+  font-size:32px;
+  cursor:pointer;
+}
+.dark-btn{
+  font-size:28px;
+  cursor:pointer;
+  margin-right:15px;
+}
+
+.side-menu{
+  height:100%;
+  width:0;
+  position:fixed;
+  top:0;
+  right:0;
+  background:#222;
+  overflow-x:hidden;
+  transition:0.4s;
+  padding-top:60px;
+  z-index:999;
+}
+.side-menu a{
+  display:block;
+  padding:15px 25px;
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+}
+.side-menu a:hover{
+  background:#333;
+}
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--green) 0%, var(--blue) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    top: -150px; left: -150px;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    bottom: -100px; right: -100px;
+  }
+
+  .cover-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    font-size: 13px;
+    padding: 6px 20px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    backdrop-filter: blur(8px);
+  }
+
+  .cover-logo {
+    font-size: 80px;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    margin-bottom: 8px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .cover-logo span {
+    color: var(--gold);
+  }
+
+  .cover-tagline {
+    font-size: 22px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    margin-bottom: 50px;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 0 auto 50px;
+  }
+
+  .cover-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 560px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .cover-info-card {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    padding: 18px 20px;
+    backdrop-filter: blur(10px);
+    text-align: right;
+  }
+
+  .cover-info-card .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-info-card .value {
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+  }
+
+  .cover-info-card.full {
+    grid-column: span 2;
+  }
+
+  .cover-seal {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+  }
+
+  /* ===== PAGE SECTIONS ===== */
+  .section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green-mid);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 18px;
+  }
+
+  .section-title span {
+    color: var(--green-mid);
+  }
+
+  .section-body {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 2;
+    max-width: 650px;
+  }
+
+  /* ===== INTRO STRIP ===== */
+  .intro-strip {
+    background: var(--green);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .intro-strip h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .intro-strip p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 2;
+  }
+
+  /* ===== TEACHER PROFILE ===== */
+  .teacher-section {
+    background: white;
+    padding: 80px 20px;
+  }
+
+  .teacher-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  .teacher-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 40px rgba(46,125,50,0.3);
+  }
+
+  .teacher-info { flex: 1; min-width: 260px; }
+
+  .teacher-info .name {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .teacher-info .title {
+    font-size: 14px;
+    color: var(--green-mid);
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .teacher-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .t-stat {
+    text-align: center;
+  }
+
+  .t-stat .num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .t-stat .desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ===== SCHOOL INFO ===== */
+  .school-section {
+    background: var(--green-pale);
+    padding: 70px 20px;
+  }
+
+  .school-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    border-right: 4px solid var(--green-mid);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+
+  .info-card .ic-label {
+    font-size: 11px;
+    color: var(--green-mid);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .info-card .ic-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .info-card .ic-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  /* ===== GRADES SECTION ===== */
+  .grades-section {
+    background: white;
+    padding: 80px 20px;
+  }
+
+  .grades-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .grades-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .grade-card {
+    flex: 1;
+    min-width: 220px;
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+  }
+
+  .grade-card.g1 { background: linear-gradient(135deg, #2E7D32, #43A047); }
+  .grade-card.g2 { background: linear-gradient(135deg, #1565C0, #1976D2); }
+  .grade-card.g3 { background: linear-gradient(135deg, #6A1B9A, #7B1FA2); }
+
+  .grade-card::before {
+    content: '';
+    position: absolute;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    bottom: -30px; left: -30px;
+  }
+
+  .grade-card .grade-num {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .grade-card .grade-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* ===== FITLIFE PAGES ===== */
+  .pages-section {
+    background: var(--ink);
+    padding: 80px 20px;
+    color: white;
+  }
+
+  .pages-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pages-section .section-label { color: var(--green-light); }
+  .pages-section .section-title { color: white; }
+
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .page-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px;
+    transition: background 0.2s, transform 0.2s;
+    cursor: default;
+  }
+
+  .page-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+  }
+
+  .page-card .icon {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+
+  .page-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .page-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+  }
+
+  .dark-mode{
+  background:#121212 !important;
+  color:white;
+}
+.dark-mode .stat-box,
+.dark-mode .feature-item,
+.dark-mode .card,
+.dark-mode .login-box,
+.dark-mode .comment-form,
+.dark-mode .chart-section{
+  background:#1e1e1e;
+  color:white;
+}
+.dark-mode .comment{
+  background:#2a2a2a;
+  color:white;
+}
+.dark-mode footer{
+  background:#000;
+}
+.dark-mode input,
+.dark-mode textarea{
+  background:#333;
+  color:white;
+  border:1px solid #555;
+}
+
+.banner{
+  background:linear-gradient(135deg,#4CAF50,#2196F3);
+  color:white;
+  padding:80px 20px;
+  text-align:center;
+}
+.banner h1{
+  font-size:60px;
+  margin-bottom:15px;
+}
+.banner p{
+  font-size:24px;
+  margin-bottom:30px;
+}
+.banner-buttons{
+  margin-top:20px;
+}
+
+  /* ===== BMI INFOGRAPHIC ===== */
+  .bmi-section {
+    background: white;
+    padding: 80px 20px;
+  }
+
+  .bmi-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .bmi-strip {
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .bmi-col {
+    flex: 1;
+    padding: 28px 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .bmi-col.underweight { background: #42A5F5; }
+  .bmi-col.normal      { background: #66BB6A; }
+  .bmi-col.overweight  { background: #FFA726; }
+  .bmi-col.obese       { background: #EF5350; }
+
+  .bmi-col .range {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 6px;
+  }
+
+  .bmi-col .status {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .bmi-col .emoji {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  /* ===== GOALS SECTION ===== */
+  .goals-section {
+    background: linear-gradient(160deg, var(--green), var(--blue-mid));
+    padding: 80px 20px;
+    color: white;
+  }
+
+  .goals-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .goals-section .section-label { color: rgba(255,255,255,0.7); }
+  .goals-section .section-title { color: white; }
+  .goals-section .section-body { color: rgba(255,255,255,0.75); }
+
+  .goals-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .goal-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 20px 24px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .goal-item .g-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .goal-item .g-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    background: var(--green-pale);
+    padding: 50px 20px;
+  }
+
+  .stats-bar-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item .snum {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .stat-item .slabel {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* ===== BACK COVER ===== */
+  .back-cover {
+    background: var(--ink);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .back-cover h2 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  .back-cover p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    line-height: 2;
+  }
+
+  .qr-placeholder {
+    width: 120px; height: 120px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    border: 2px dashed rgba(255,255,255,0.2);
+  }
+
+  .footer-final {
+    margin-top: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* ===== NUTRITION BOX ===== */
+  .nutrition-section {
+    background: white;
+    padding: 80px 20px;
+  }
+
+  .nutrition-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .nutrition-cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .nutrition-card {
+    flex: 1;
+    min-width: 140px;
+    background: var(--green-pale);
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    border: 2px solid var(--border);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .nutrition-card:hover {
+    border-color: var(--green-mid);
+    transform: scale(1.03);
+  }
+
+  .nutrition-card .food-icon { font-size: 38px; margin-bottom: 10px; }
+  .nutrition-card h4 { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .nutrition-card p { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.6; }
+
+  /* PRINT */
+  @media print {
+    .cover { page-break-after: always; }
+    .section, .teacher-section, .school-section, .grades-section,
+    .pages-section, .bmi-section, .goals-section { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 600px) {
+    .cover-logo { font-size: 54px; }
+    .cover-info-grid { grid-template-columns: 1fr; }
+    .cover-info-card.full { grid-column: span 1; }
+    .bmi-strip { flex-direction: column; }
+    .teacher-inner { flex-direction: column; align-items: flex-start; }
+    .section-title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">FitLife</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+
+<div id="sidemenu" class="side-menu">
+  <a href="javascript:void(0)" onclick="toggleMenu()">✖</a>
+  <a href="index.html">خانه</a>
+  <a href="catalogue-2.html">درباره ما</a>
+  <a href="fitness-1.html">آزمون BMI</a>
+  <a href="metabolism-1.html">آزمون متابولیسم</a>
+  <a href="sport-shop.html">فروشگاه</a>
+  <a href="javascript:void(0)" onclick="toggleDark()">🌙 دارک مود</a>
+  <a href="login.html">ورود به پنل</a>
+</div>
+
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-badge">📋 کاتالوگ آموزشی رسمی · سال تحصیلی ۱۴۰۵–۱۴۰۶</div>
+
+  <div class="cover-logo">Fit<span>Life</span></div>
+  <div class="cover-tagline">برنامه جامع سلامت و تربیت بدنی</div>
+  <div class="cover-divider"></div>
+
+  <div class="cover-info-grid">
+    <div class="cover-info-card">
+      <div class="label">مدرسه</div>
+      <div class="value">دبیرستان خیر غیابی</div>
+    </div>
+    <div class="cover-info-card">
+      <div class="label">منطقه</div>
+      <div class="value">مشهد · ناحیه ۶</div>
+    </div>
+    <div class="cover-info-card">
+      <div class="label">دوره تحصیلی</div>
+      <div class="value">متوسطه دوم</div>
+    </div>
+    <div class="cover-info-card">
+      <div class="label">پایه‌های تحصیلی</div>
+      <div class="value">دهم · یازدهم · دوازدهم</div>
+    </div>
+    <div class="cover-info-card full">
+      <div class="label">مدیر مدرسه</div>
+      <div class="value">منصوره سادات حسینی</div>
+    </div>
+  </div>
+
+  <div class="cover-seal">آموزش‌وپرورش ایران · مشهد مقدس</div>
+</div>
+
+<!-- ===== INTRO STRIP ===== -->
+<div class="intro-strip">
+  <h2>💪 سلامت امروز، موفقیت فردا</h2>
+  <p>این کاتالوگ به عنوان راهنمای جامع برنامه تربیت بدنی دبیرستان خیر غیابی تهیه شده است و شامل اطلاعات کامل درباره سلامت، تناسب اندام، و ابزارهای دیجیتال آموزشی می‌باشد.</p>
+</div>
+
+<!-- ===== TEACHER PROFILE ===== -->
+<div class="teacher-section">
+  <div class="teacher-inner">
+    <div class="teacher-avatar">👩‍🏫</div>
+    <div class="teacher-info">
+      <div class="section-label">مدرس تربیت بدنی</div>
+      <div class="name">مریم محمدی ثانی</div>
+      <div class="title">معلم تربیت بدنی · دبیرستان خیر غیابی مشهد</div>
+      <div class="teacher-stats">
+        <div class="t-stat">
+          <div class="num">۲۸</div>
+          <div class="desc">سال سابقه تدریس</div>
+        </div>
+        <div class="t-stat">
+          <div class="num">۳</div>
+          <div class="desc">پایه تحصیلی</div>
+        </div>
+        <div class="t-stat">
+          <div class="num">۶</div>
+          <div class="desc">ناحیه مشهد</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCHOOL INFO ===== -->
+<div class="school-section">
+  <div class="school-inner">
+    <div class="section-label">مشخصات آموزشگاه</div>
+    <div class="section-title">اطلاعات <span>مدرسه</span></div>
+    <div class="section-body">دبیرستان خیر غیابی با مدیریت سرکار خانم منصوره سادات حسینی، یکی از مراکز آموزشی فعال ناحیه ۶ مشهد در مقطع متوسطه دوم می‌باشد.</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="ic-icon">🏫</div>
+        <div class="ic-label">نام مدرسه</div>
+        <div class="ic-value">دبیرستان خیر غیابی</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">👩‍💼</div>
+        <div class="ic-label">مدیر مدرسه</div>
+        <div class="ic-value">منصوره سادات حسینی</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📍</div>
+        <div class="ic-label">موقعیت</div>
+        <div class="ic-value">مشهد مقدس · ناحیه ۶</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🎓</div>
+        <div class="ic-label">دوره تحصیلی</div>
+        <div class="ic-value">متوسطه دوم</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GRADES ===== -->
+<div class="grades-section">
+  <div class="grades-inner">
+    <div class="section-label">پایه‌های تحصیلی</div>
+    <div class="section-title">برنامه درسی برای <span>سه پایه</span></div>
+    <div class="section-body">برنامه تربیت بدنی FitLife برای هر سه پایه متوسطه دوم طراحی شده و هر پایه اهداف و چالش‌های ویژه خود را دارد.</div>
+    <div class="grades-row">
+      <div class="grade-card g1">
+        <div class="grade-num">۱۰</div>
+        <div class="grade-label">پایه دهم · آشنایی با اصول سلامت</div>
+      </div>
+      <div class="grade-card g2">
+        <div class="grade-num">۱۱</div>
+        <div class="grade-label">پایه یازدهم · تقویت مهارت‌ها</div>
+      </div>
+      <div class="grade-card g3">
+        <div class="grade-num">۱۲</div>
+        <div class="grade-label">پایه دوازدهم · آمادگی پیشرفته</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FITLIFE PAGES ===== -->
+<div class="pages-section">
+  <div class="pages-inner">
+    <div class="section-label">ابزارهای دیجیتال</div>
+    <div class="section-title">امکانات سامانه <span style="color:var(--green-light)">FitLife</span></div>
+    <div class="section-body" style="color:rgba(255,255,255,0.6)">این سامانه آموزشی شامل چندین ماژول تخصصی برای سنجش و بهبود سلامت دانش‌آموزان است.</div>
+    <div class="pages-grid">
+      <div class="page-card">
+        <div class="icon">💪</div>
+        <h3>آزمون BMI</h3>
+        <p>سنجش شاخص توده بدنی و ارائه تحلیل شخصی برای هر دانش‌آموز با نمایش گرافیکی وضعیت</p>
+      </div>
+      <div class="page-card">
+        <div class="icon">🔥</div>
+        <h3>آزمون متابولیسم</h3>
+        <p>محاسبه نرخ متابولیسم پایه و برآورد کالری مورد نیاز روزانه بر اساس سطح فعالیت</p>
+      </div>
+      <div class="page-card">
+        <div class="icon">📊</div>
+        <h3>داشبورد کاربری</h3>
+        <p>پنل شخصی هر دانش‌آموز برای رهگیری پیشرفت، ثبت وزن، و مشاهده نمودار روند</p>
+      </div>
+      <div class="page-card">
+        <div class="icon">🛒</div>
+        <h3>فروشگاه ورزشی</h3>
+        <p>دسترسی به تجهیزات و لوازم ورزشی مناسب برای تمرینات خانگی و مدرسه</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BMI ===== -->
+<div class="bmi-section">
+  <div class="bmi-inner">
+    <div class="section-label">شاخص توده بدنی</div>
+    <div class="section-title">راهنمای <span>BMI</span></div>
+    <div class="section-body">شاخص توده بدنی یکی از اصلی‌ترین معیارهای سنجش سلامت است که در برنامه FitLife به صورت دقیق محاسبه می‌شود.</div>
+    <div class="bmi-strip">
+      <div class="bmi-col underweight">
+        <div class="emoji">⚡</div>
+        <div class="range">کمتر از ۱۸.۵</div>
+        <div class="status">کمبود وزن</div>
+      </div>
+      <div class="bmi-col normal">
+        <div class="emoji">✅</div>
+        <div class="range">۱۸.۵ تا ۲۴.۹</div>
+        <div class="status">وزن نرمال</div>
+      </div>
+      <div class="bmi-col overweight">
+        <div class="emoji">⚠️</div>
+        <div class="range">۲۵ تا ۲۹.۹</div>
+        <div class="status">اضافه وزن</div>
+      </div>
+      <div class="bmi-col obese">
+        <div class="emoji">🔴</div>
+        <div class="range">۳۰ و بالاتر</div>
+        <div class="status">چاقی</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NUTRITION ===== -->
+<div class="nutrition-section">
+  <div class="nutrition-inner">
+    <div class="section-label">تغذیه سالم</div>
+    <div class="section-title">توصیه‌های <span>تغذیه‌ای</span></div>
+    <div class="section-body">برای حفظ وزن نرمال و سلامت عمومی، مصرف منظم این گروه‌های غذایی توصیه می‌شود.</div>
+    <div class="nutrition-cards">
+      <div class="nutrition-card">
+        <div class="food-icon">🥗</div>
+        <h4>سبزیجات متنوع</h4>
+        <p>ویتامین‌ها و مواد معدنی ضروری</p>
+      </div>
+      <div class="nutrition-card">
+        <div class="food-icon">🍗</div>
+        <h4>پروتئین</h4>
+        <p>مرغ، ماهی، تخم‌مرغ</p>
+      </div>
+      <div class="nutrition-card">
+        <div class="food-icon">🌾</div>
+        <h4>غلات کامل</h4>
+        <p>جو، برنج قهوه‌ای</p>
+      </div>
+      <div class="nutrition-card">
+        <div class="food-icon">🫘</div>
+        <h4>حبوبات</h4>
+        <p>عدس، لوبیا، نخود</p>
+      </div>
+      <div class="nutrition-card">
+        <div class="food-icon">💧</div>
+        <h4>آب کافی</h4>
+        <p>حداقل ۸ لیوان در روز</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GOALS ===== -->
+<div class="goals-section">
+  <div class="goals-inner">
+    <div class="section-label">اهداف برنامه</div>
+    <div class="section-title">چرا <span style="color:var(--gold)">FitLife</span>؟</div>
+    <div class="section-body">برنامه جامع سلامت مدرسه با هدف توانمندسازی دانش‌آموزان برای داشتن سبک زندگی سالم طراحی شده است.</div>
+    <div class="goals-list">
+      <div class="goal-item">
+        <div class="g-icon">🏃</div>
+        <div class="g-text">ارتقای آمادگی جسمانی دانش‌آموزان از طریق برنامه‌های منظم ورزشی</div>
+      </div>
+      <div class="goal-item">
+        <div class="g-icon">📱</div>
+        <div class="g-text">استفاده از ابزارهای دیجیتال برای سنجش و رهگیری سلامت به صورت علمی</div>
+      </div>
+      <div class="goal-item">
+        <div class="g-icon">🥗</div>
+        <div class="g-text">آموزش اصول تغذیه سالم و ایجاد عادات غذایی صحیح از دوران نوجوانی</div>
+      </div>
+      <div class="goal-item">
+        <div class="g-icon">🧠</div>
+        <div class="g-text">تقویت سلامت روان از طریق ورزش منظم و فعالیت‌های گروهی</div>
+      </div>
+      <div class="goal-item">
+        <div class="g-icon">🏆</div>
+        <div class="g-text">ایجاد انگیزه و رقابت سالم میان دانش‌آموزان برای دستیابی به اهداف سلامتی</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="snum">۲۸</div>
+      <div class="slabel">سال تجربه تدریس</div>
+    </div>
+    <div class="stat-item">
+      <div class="snum">۳</div>
+      <div class="slabel">پایه تحصیلی پوشش‌داده‌شده</div>
+    </div>
+    <div class="stat-item">
+      <div class="snum">۵</div>
+      <div class="slabel">ماژول آموزشی دیجیتال</div>
+    </div>
+    <div class="stat-item">
+      <div class="snum">۴</div>
+      <div class="slabel">سطح BMI قابل‌سنجش</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BACK COVER ===== -->
+<div class="back-cover">
+  <div class="qr-placeholder">💻</div>
+  <h2>به FitLife خوش آمدید</h2>
+  <p>سامانه آموزشی FitLife یک ابزار یکپارچه برای سنجش سلامت، آموزش تغذیه، و ارتقای آمادگی جسمانی دانش‌آموزان دبیرستان خیر غیابی است.</p>
+
+  <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:20px;">
+    <div style="text-align:center;">
+      <div style="font-size:32px; margin-bottom:8px;">🏫</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.5);">دبیرستان خیر غیابی</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:32px; margin-bottom:8px;">📍</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.5);">مشهد · ناحیه ۶</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:32px; margin-bottom:8px;">👩‍🏫</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.5);">مریم محمدی ثانی</div>
+    </div>
+  </div>
+
+  <div class="footer-final">
+    کاتالوگ آموزشی FitLife · آموزش‌وپرورش مشهد · ناحیه ۶ · ۱۴۰۵
+    <br>© 2026 FitLife | طراحی توسط شما
+  </div>
+</div>
+<script>
+if(
+    localStorage.getItem("theme") == 
+    "dark"){
+document.body.classList.add(
+    "dark-mode"
+)}
+
+function toggleMenu(){
+
+let menu =
+document.getElementById("sidemenu");
+
+if(menu.style.width=="250px"){
+menu.style.width="0";
+}
+else{
+
+menu.style.width="250px";
+
+}
+
+}
+function toggleDark(){
+document.body.classList.toggle(
+"dark-mode"
+);
+}
+function toggleDark(){
+document.body.classList.toggle(
+"dark-mode"
+);
+
+if(
+document.body.classList.contains(
+"dark-mode"
+)
+){
+localStorage.setItem(
+"theme",
+"dark"
+);
+}
+else{
+
+localStorage.setItem(
+"theme",
+"light"
+);
+}
+}
+</script>
+</body>
+</html>
