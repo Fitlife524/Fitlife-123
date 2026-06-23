@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<title>آزمون تناسب اندام</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  font-family:tahoma;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(
+    -45deg,
+    #4CAF50,
+    #2196F3,
+    #81dd84,
+    #89bde7
+  );
+  background-size:400% 400%;
+  animation:gradientBG 12s ease infinite;
+}
+@keyframes gradientBG{
+  0%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+  100%{ background-position:0% 50%; }
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:linear-gradient(135deg,#81dd84,#89bde7);
+  color:white;
+}
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:bold;
+}
+.menu-btn{
+  font-size:32px;
+  cursor:pointer;
+}
+.dark-btn{
+  font-size:28px;
+  cursor:pointer;
+  margin-right:15px;
+}
+
+.side-menu{
+  height:100%;
+  width:0;
+  position:fixed;
+  top:0;
+  right:0;
+  background:#222;
+  overflow-x:hidden;
+  transition:0.4s;
+  padding-top:60px;
+  z-index:999;
+}
+.side-menu a{
+  display:block;
+  padding:15px 25px;
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+}
+.side-menu a:hover{
+  background:#333;
+}
+
+.container{
+  max-width:600px;
+  margin:40px auto;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 2px 15px rgba(0,0,0,.1);
+}
+
+input,
+select{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ddd;
+  border-radius:8px;
+  box-sizing:border-box;
+  font-family:tahoma;
+}
+
+button{
+  background:#4CAF50;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
+}
+button:hover{
+  opacity:.9;
+}
+
+.result-card{
+  margin-top:20px;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+#result{
+  color:#f0f0f0;
+  font-weight:bold;
+  background:#fff;
+}
+
+.bmi-bar{
+  width:100%;
+  display:flex;
+  height:auto;
+  background:#fff;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:15px;
+}
+.bar{
+  flex:10;
+  padding:10px;
+  text-align:center;
+  font-size:14px;
+  font-weight:bold;
+  color:white;
+  opacity:.4;
+  transition:.3s;
+}
+.bar.active{
+  opacity:1;
+  transform:scale(1.05);
+}
+.underweight{ background:#2196f3; }
+.normal{ background:#4CAF50; }
+.overweight{ background:#ff9800; }
+.obese{ background:#f44336; }
+
+#bodyImage{
+  display:none;
+  width:220px;
+  margin:20px auto 0;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  margin-top:auto;
+  background:#222;
+  color:white;
+}
+.footer-content{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+  text-align:right;
+}
+.footer-section ul{
+  list-style:none;
+  padding:0;
+}
+.footer-section li{
+  margin:8px 0;
+  color:#ddd;
+}
+.footer-section p{
+  margin:6px 0;
+  color:#ddd;
+  font-size:14px;
+}
+.footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:15px;
+}
+.footer-links a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+.footer-links a:hover{
+  color:gold;
+}
+
+.dark-mode{
+  background:#121212 !important;
+  color:white;
+}
+.dark-mode .stat-box,
+.dark-mode .feature-item,
+.dark-mode .card,
+.dark-mode .login-box,
+.dark-mode .container,
+.dark-mode .result-card{
+  background:#1e1e1e;
+  color:white;
+}
+.dark-mode footer{
+  background:#000;
+}
+.dark-mode input,
+.dark-mode select{
+  background:#333;
+  color:white;
+  border:1px solid #555;
+}
+
+@media (max-width:600px){
+  .container{
+    width:100%;
+    border-radius:15px;
+    padding:20px;
+  }
+  h1{ font-size:18px; }
+  input, select, button{
+    font-size:16px;
+    padding:12px;
+  }
+  #bodyImage{ width:140px; }
+  .bmi-bar{ flex-direction:column; }
+  .bar{ margin-bottom:5px; }
+}
+@media (min-width:1024px){
+  .container{ max-width:480px; }
+  button{ font-size:16px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">FitLife</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+<div id="sidemenu" class="side-menu">
+  <a href="javascript:void(0)" onclick="toggleMenu()">✖</a>
+  <a href="index.html">خانه</a>
+  <a href="catalogue-2.html">درباره ما</a>
+  <a href="fitness-1.html">آزمون BMI</a>
+  <a href="metabolism-1.html">آزمون متابولیسم</a>
+  <a href="sport-shop.html">فروشگاه</a>
+  <a href="javascript:void(0)" onclick="toggleDark()">🌙 دارک مود</a>
+  <a href="login.html">ورود به پنل</a>
+</div>
+
+<div class="container">
+  <h2>محاسبه BMI</h2>
+
+  <input type="number" id="height" placeholder="قد (سانتی متر)" min="50" max="250">
+  <input type="number" id="weight" placeholder="وزن (کیلوگرم)" min="1" max="300">
+  <input type="number" id="age" placeholder="سن" min="1" max="120">
+  <select id="activity">
+    <option value="کم">فعالیت کم</option>
+    <option value="متوسط">فعالیت متوسط</option>
+    <option value="زیاد">فعالیت زیاد</option>
+  </select>
+  <button onclick="calculateBMI()">محاسبه BMI</button>
+
+  <div id="result" class="result-card"></div>
+
+  <div class="bmi-bar">
+    <div class="bar underweight">کم وزن</div>
+    <div class="bar normal">نرمال</div>
+    <div class="bar overweight">اضافه وزن</div>
+    <div class="bar obese">چاقی</div>
+  </div>
+
+  <img id="bodyImage" src="" alt="تصویر وضعیت بدنی">
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>FitLife</h3>
+      <p>محاسبه BMI</p>
+    </div>
+    <div class="footer-section">
+      <h3>درباره مدرس</h3>
+      <p>نام و نام خانوادگی معلم تربیت بدنی: مریم محمدی ثانی</p>
+      <p>دوره تحصیلی: متوسطه دوم</p>
+      <p>پایه: دهم، یازدهم، دوازدهم</p>
+      <p>سابقه: 28 سال</p>
+      <p>منطقه: مشهد/ناحیه6</p>
+      <p>نام مدرسه: دبیرستان خیرغیابی</p>
+      <p>نام مدیر مدرسه: منصوره سادات حسینی</p>
+    </div>
+  </div>
+  <p>© 2026 FitLife | طراحی توسط شما</p>
+</footer>
+
+<script>
+  if(localStorage.getItem("theme") == "dark"){
+    document.body.classList.add("dark-mode");
+  }
+
+  function toggleMenu(){
+    let menu = document.getElementById("sidemenu");
+    if(menu.style.width == "250px"){
+      menu.style.width = "0";
+    } else {
+      menu.style.width = "250px";
+    }
+  }
+
+  function toggleDark(){
+    document.body.classList.toggle("dark-mode");
+    if(document.body.classList.contains("dark-mode")){
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  function highlightBar(category){
+    document.querySelectorAll(".bar").forEach(b => b.classList.remove("active"));
+    document.querySelector(".bar." + category).classList.add("active");
+  }
+
+  function calculateBMI(){
+    let height = parseFloat(document.getElementById("height").value);
+    let weight = parseFloat(document.getElementById("weight").value);
+    let age = document.getElementById("age").value;
+    let activity = document.getElementById("activity").value;
+    let exercise = "";
+
+    if(!height || !weight){
+      alert("قد و وزن را وارد کنید");
+      return;
+    }
+
+    let bmi = weight / ((height / 100) * (height / 100));
+
+    let score = 0;
+    if(bmi < 18.5){ score = 60; }
+    else if(bmi < 25){ score = 95; }
+    else if(bmi < 30){ score = 75; }
+    else { score = 50; }
+
+    if(activity == "کم"){
+      exercise = "پیاده روی روزانه 30 دقیقه";
+    } else if(activity == "متوسط"){
+      exercise = "هفته‌ای 3 جلسه ورزش";
+    } else {
+      exercise = "ادامه برنامه فعلی";
+    }
+
+    localStorage.setItem("lastBMI", bmi.toFixed(1));
+
+    let result = document.getElementById("result");
+    let image = document.getElementById("bodyImage");
+    let statusText, statusClass;
+
+    if(bmi < 18.5){
+      statusText = "کم وزن";
+      statusClass = "underweight";
+      image.src = "file_000000003a3c720aae0242a0cd2e82e5.png";
+      result.style.background = "#2196f3";
+    } else if(bmi < 25){
+      statusText = "نرمال";
+      statusClass = "normal";
+      image.src = "Screenshot_20260601_101941_ChatGPT.jpg";
+      result.style.background = "#4CAF50";
+    } else if(bmi < 30){
+      statusText = "اضافه وزن";
+      statusClass = "overweight";
+      image.src ="ورزش اضافه وزن.png";
+      result.style.background = "#ff9800";
+    } else {
+      statusText = "چاقی";
+      statusClass = "obese";
+      image.src = "file_0000000070707243bc509485f331d199.png";
+      result.style.background = "#f44336";
+    }
+
+    localStorage.setItem("status", statusText);
+    image.style.display = "block";
+    highlightBar(statusClass);
+
+    result.innerHTML =
+      "BMI شما: " + bmi.toFixed(1) +
+      "<br>امتیاز سلامت: " + score + "/100" +
+      "<br><br>وضعیت: " + statusText +
+      "<br>سن: " + age +
+      "<br>فعالیت: " + activity +
+      "<br>ورزش پیشنهادی: " + exercise;
+
+    // ذخیره تاریخچه برای استفاده‌ی داخلی همین صفحه
+    let bmiHistory = JSON.parse(localStorage.getItem("bmiHistory")) || [];
+    bmiHistory.push({ bmi: bmi });
+    localStorage.setItem("bmiHistory", JSON.stringify(bmiHistory));
+
+    // ذخیره تاریخچه با همان کلید و ساختاری که نمودار صفحه اصلی (index.html) می‌خواند
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+    history.push({
+      weight: weight,
+      bmi: Number(bmi.toFixed(1)),
+      date: new Date().toLocaleDateString("fa-IR")
+    });
+    localStorage.setItem("history", JSON.stringify(history));
+  }
+</script>
+
+</body>
+</html>
